@@ -2,13 +2,15 @@ import { AnalysisdataType } from "@/types/types";
 import { colorList } from "@/constants/pieChartAnalysisColor";
 export function PathHeading(path: string) {
   const pathname = (path.length > 1 && path.split("/")) || [];
-  const pathArr = pathname[1].split("-");
-  //   console.log(pathArr);
-  var ans = "";
-  pathArr.map((el) => {
-    ans += el[0].toUpperCase() + el.substring(1, el.length) + " ";
-  });
-  return ans.substring(0, ans.length - 1);
+  if (pathname.length > 1) {
+    const pathArr = pathname[1].split("-");
+    //   console.log(pathArr);
+    var ans = "";
+    pathArr.map((el) => {
+      ans += el[0].toUpperCase() + el.substring(1, el.length) + " ";
+    });
+    return ans.substring(0, ans.length - 1);
+  }
 }
 
 export function colorListChart(arr: AnalysisdataType[]) {
