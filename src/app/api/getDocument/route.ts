@@ -12,5 +12,5 @@ export async function GET(req: NextRequest) {
     .find({})
     .toArray();
 
-  return NextResponse.json({ data: { data: data } });
+  return NextResponse.json({ data: data });
 }
