@@ -212,7 +212,7 @@ export default function Analytics() {
           <div className="bg-white h-[40vh] flex flex-col w-full py-5 px-2 border-r-4 border-r-white rounded-[1.5rem] items-center justify-between shadow-lg shadow-[#1010101A]">
             <div className="w-full flex items-center justify-end">
               <button className="flex items-center justify-center space-x-2 bg-Corange rounded-full py-2 px-5">
-                <img src="/Download.png"></img>
+                <img src="/download.png"></img>
                 <p className="font-semibold text-sm text-white">Download</p>
               </button>
             </div>

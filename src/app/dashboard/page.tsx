@@ -94,38 +94,7 @@ export default function page() {
       date: "2024-02-23 ",
     },
   ];
-  // const locations = [
-  //   {
-  //     id: 1,
-  //     location: "YANTIAN, CHINA",
-  //     lat: 22.5590503,
-  //     long: 114.2324407,
-  //   },
-  //   {
-  //     id: 2,
-  //     location: "LONG BEACH, CA",
-  //     lat: 33.7701,
-  //     long: -118.1937,
-  //   },
-  //   {
-  //     id: 3,
-  //     location: "SHANGHAI, CHINA",
-  //     lat: 31.2304,
-  //     long: 121.4737,
-  //   },
-  //   {
-  //     id: 4,
-  //     location: "LOS ANGELES, CA",
-  //     lat: 34.0522,
-  //     long: -118.2437,
-  //   },
-  //   {
-  //     id: 5,
-  //     location: "NINGBO, CHINA",
-  //     lat: 29.8683,
-  //     long: 121.544,
-  //   },
-  // ];
+
   useEffect(() => {
     const result = async () => {
       try {
