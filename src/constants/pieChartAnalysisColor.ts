@@ -1,0 +1,15 @@
+export const colorList = [
+  { key: "BOOKED", color: "rgb(107, 18, 10)" },
+  { key: "DISCHARGED", color: "rgb(235, 93, 80)" },
+  { key: "ARRIVED", color: "rgb(247, 166, 104)" },
+  { key: "DELIVERED", color: "rgb(123, 184, 150)" },
+  { key: "RETURNED", color: "rgb(16, 115, 230)" },
+  { key: "NHAVA SHEVA, INDIA", color: "rgb(107, 18, 10)" },
+  { key: "HONG KONG, HONG KONG", color: "rgb(235, 93, 80)" },
+  { key: "YANTIAN, CHINA", color: "rgb(247, 166, 104)" },
+  { key: "DALIAN, CHINA", color: "rgb(123, 184, 150)" },
+  { key: "LONDON GATEWAY PORT, UK", color: "rgb(16, 115, 230)" },
+  { key: "ON TIME", color: "rgb(123, 184, 150)" },
+  { key: "LATE", color: "rgb(247, 166, 104)" },
+  { key: "OTHER", color: "rgb(133, 101, 98)" },
+];
