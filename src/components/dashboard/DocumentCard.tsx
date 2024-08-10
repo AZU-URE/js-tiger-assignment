@@ -18,11 +18,11 @@ export default function DocumentCard(el: DocumentType) {
   //   2024-06-24
   const [date, setDate] = useState("");
   useEffect(() => {
-    var date = new Date(el.date);
+    var date = new Date(el.created_at);
     var newdate = date.toDateString().split(" ");
     // console.log(newdate[1] + "," + newdate[2] + "," + newdate[3]);
     setDate(newdate[1] + "," + newdate[2] + "," + newdate[3]);
-  }, [el.date]);
+  }, [el.created_at]);
 
   return (
     <div className="flex items-start pb-3 border-b-2 mb-3 border-b-Cgrey justify-start w-full">
@@ -32,7 +32,7 @@ export default function DocumentCard(el: DocumentType) {
       ></img>
       <div className="flex flex-col items-start justify-between h-full space-y-2">
         <h5 className="text-Cblack font-bold text-base">{el.title}</h5>
-        <p className="text-Cblack text-xs">{el.detail}</p>
+        <p className="text-Cblack text-xs">{el.description}</p>
       </div>
       <div className="w-full text-end text-Cblack text-base">
         <h5>{date}</h5>

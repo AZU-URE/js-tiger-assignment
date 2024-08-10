@@ -20,8 +20,8 @@ export type PieChartAnalysisType = {
 };
 export type DocumentType = {
   title: string;
-  detail: string;
-  date: string;
+  description: string;
+  created_at: string;
 };
 export type LocationType = {
   id: number;

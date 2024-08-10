@@ -2,6 +2,11 @@
 import BookingCard from "@/components/dashboard/BookingCard";
 import PieChartComp from "@/components/dashboard/PieChartComp";
 import DocumentCard from "@/components/dashboard/DocumentCard";
+import {
+  DocumentType,
+  BookingCardType,
+  PieChartAnalysisType,
+} from "@/types/types";
 // import MapComp from "@/components/dashboard/Map";
 import { useState, useEffect } from "react";
 export default function page() {
@@ -67,34 +72,25 @@ export default function page() {
       { name: "DELIVERED", value: 10 },
     ],
   };
-  const Documents = [
-    {
-      title: "Document1",
-      detail: "lorem ipsum lorem ipsum lorem ipsum",
-      date: "2024-02-23 ",
-    },
-    {
-      title: "Document1",
-      detail: "lorem ipsum lorem ipsum lorem ipsum",
-      date: "2024-02-23 ",
-    },
-    {
-      title: "Document1",
-      detail: "lorem ipsum lorem ipsum lorem ipsum",
-      date: "2024-02-23 ",
-    },
-    {
-      title: "Document1",
-      detail: "lorem ipsum lorem ipsum lorem ipsum",
-      date: "2024-02-23 ",
-    },
-    {
-      title: "Document1",
-      detail: "lorem ipsum lorem ipsum lorem ipsum",
-      date: "2024-02-23 ",
-    },
-  ];
 
+  const [documents, setDocuments] = useState<DocumentType[]>([]);
+  const [booking, setBooking] = useState<BookingCardType[]>([]);
+  const [portData, setPortData] = useState<PieChartAnalysisType[]>([]);
+  const [milestoneData, setMilestoneData] = useState<PieChartAnalysisType>();
+  useEffect(() => {
+    const fetchDocs = async () => {
+      try {
+        const response = await (
+          await fetch("/api/getDocument", { method: "GET" })
+        ).json();
+        // console.log(response?.data);
+        setDocuments(response?.data);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    fetchDocs();
+  }, []);
   useEffect(() => {
     const result = async () => {
       try {
@@ -103,7 +99,7 @@ export default function page() {
             method: "GET",
           })
         ).json();
-        console.log(response);
+        const data = response?.data;
       } catch (error) {
         console.log(error);
       }
@@ -167,7 +163,7 @@ export default function page() {
             Latest Documents
           </h1>
           <div className="w-full h-full flex flex-col overflow-y-scroll px-3">
-            {Documents.map((el) => (
+            {documents.map((el) => (
               <DocumentCard {...el} />
             ))}
           </div>
